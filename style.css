@@ -1,0 +1,122 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    background-color: var(--dark-blue);
+    color: var(--light-cyan);
+
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6, q {
+    overflow-wrap: break-word;
+    font-weight: 700;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+:root {
+    --light-cyan: hsl(193, 38%, 86%);
+    --neon-green: hsl(150, 100%, 66%);
+
+    --grayish-blue: hsl(217, 19%, 38%);
+    --dark-grayish-blue: hsl(217, 19%, 24%);
+    --dark-blue: hsl(218, 23%, 16%);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 10em 1em;
+    padding: 2em 2em 4em 2em;
+    max-width: 32em;
+
+    border-radius: 0.75rem;
+    background-color: var(--dark-grayish-blue);
+}
+
+button {
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 4em;
+    width: 4em;
+    bottom: -2em;
+
+    border: none;
+    border-radius: 2em;
+    background-color: var(--neon-green);
+}
+
+h2 {
+    color: var(--neon-green);
+    font-size: 12px;
+    letter-spacing: 0.2rem;
+}
+
+q {
+    font-size: 28px;
+    text-align: center;
+
+    width: 100%;
+
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+@media (any-hover: hover) {
+    button:hover {
+        box-shadow: 0 0 0.7em 0.7em hsla(150, 100%, 66%, 30%);
+    }
+
+    button:hover svg{
+        animation: dice-rotate 1s linear infinite;
+    }
+}
+
+@keyframes dice-rotate {
+    25% {
+        -moz-transform: rotate(30deg);
+        transform: rotate(30deg)
+    }
+    75% {
+        -moz-transform: rotate(-30deg);
+        transform: rotate(-30deg)
+    }
+}
